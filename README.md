@@ -12,6 +12,9 @@ Below are examples of Windows 11 running on GitHub Codespaces:
 ![Image](https://github.com/user-attachments/assets/e006bcd4-a265-417e-b535-20a1d7036dfc)
 
 ## Directions:
+# YOU MUST LOG IN TO YOUR GITHUB ACCOUNT TO PROCEED.
+# Copyright@2025 ANDREW_SHIN
+
 [![Start a Windows 11 Container - CLICK HERE.](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?repo=Gamer-friend/windows-11-new&machine=standardLinux32gb)
 
 Click on the button above, and set the codespace at the MAX Machine type. When you click the link, you will see something like:
