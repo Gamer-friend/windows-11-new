@@ -3,7 +3,7 @@
 
 Below are examples of Windows 11 running on GitHub Codespaces:
 
-<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/c7cc3c3e-c8d0-471a-9ed9-7df78a6c61a0" />
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/c7cc3c3e-c8d0-471a-9ed9-7df78a6c61a0" />
 
 
 ![Image](https://github.com/user-attachments/assets/3ec6ea7f-8664-4449-9495-c748ea29aef5)
