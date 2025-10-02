@@ -1,7 +1,7 @@
 ## Windows 11 By Andrew Shin
 ## Images
-### and
-Below are examples of Windows 11 running on GitHub Codespaces:
+
+## Below are examples of Windows 11 running on GitHub Codespaces:
 
 <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/c7cc3c3e-c8d0-471a-9ed9-7df78a6c61a0" /> <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/da41762f-cfc0-401e-a9b3-673c396e74d4" /> <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/e3fe05c7-e9ef-4244-b645-ffb220dc1eaa" /> <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/6598f8c8-fd1c-4d36-88b6-426ac0ff114c" />
 
@@ -12,7 +12,7 @@ Below are examples of Windows 11 running on GitHub Codespaces:
 
 [![Start a Windows 11 Container - CLICK HERE.](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?repo=Gamer-friend/windows-11-new&machine=standardLinux32gb)
 
-Click on the button above and set the code space at the MAX Machine type. When you click the link, you will see something like:
+# Click on the button above and set the code space at the MAX Machine type. When you click the link, you will see something like:
 <img width="1359" height="601" alt="Screenshot 2025-10-01 7 29 28 PM" src="https://github.com/user-attachments/assets/09197b0c-d85f-4cfa-b404-59b4fc270fcc" />
 
 Now, At the bottom, where it says "Machine type", Change "2-core" to "16-core". After you changed the Machine type, it should look something like this now:
