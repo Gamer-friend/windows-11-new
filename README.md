@@ -1,35 +1,7 @@
-# Welcome to windows-dind
-
-This repository includes the required files which allows you to run Windows 11 on GitHub Codespaces.
-
-It installs Tailscale which allows you to Remote Desktop Protocol (RDP) into Windows 11.
-
-It is based on the [dockur/windows](https://github.com/dockur/windows) repository but contains customizations and optimizations for GitHub Codespaces.
-
-> [!CAUTION]
-> This repository should be used for development and testing purposes only. <br>
-> I am not responsible for any issues such as account suspensions or data loss.
-
-## Table of Contents
-- [Images](#images)
-- [Usage](#usage)
-    - [Using the web version of GitHub (recommended)](#using-the-web-version-of-github-recommended)
-    - [Using the CLI version of GitHub (alternative)](#using-the-cli-version-of-github-alternative)
-- [Commands](#commands)
-- [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
-    - [Why did you create this repository?](#why-did-you-create-this-repository)
-    - [What machine types are available for GitHub Codespaces?](#what-machine-types-are-available-for-github-codespaces)
-    - [How many usage hours can I use GitHub Codespaces for free each month?](#how-many-usage-hours-can-i-use-github-codespaces-for-free-each-month)
-    - [What regions are available for my GitHub Codespaces?](#what-regions-are-available-for-my-github-codespaces)
-    - [How can I change the inactivity timeout for my GitHub Codespaces?](#how-can-i-change-the-inactivity-timeout-for-my-github-codespaces)
-    - [Why did you choose Tailscale over Ngrok for Remote Desktop Protocol (RDP)?](#why-did-you-choose-tailscale-over-ngrok-for-remote-desktop-protocol-rdp)
-    - [What are the steps to create my own system images?](#what-are-the-steps-to-create-my-own-system-images)
-        - [Requirements](#requirements)
-        - [Guide](#guide)
-
+## Windows 11 By Andrew Shin
 ## Images
 
-Below are images of Windows 11 running on GitHub Codespaces:
+Below are examples of Windows 11 running on GitHub Codespaces:
 
 ![Image](https://github.com/user-attachments/assets/561bb50d-eee8-46cb-9614-8d5a16a9296c)
 
@@ -39,338 +11,52 @@ Below are images of Windows 11 running on GitHub Codespaces:
 
 ![Image](https://github.com/user-attachments/assets/e006bcd4-a265-417e-b535-20a1d7036dfc)
 
-## Usage
-
-### Using the web version of GitHub (recommended)
-
-Click on the button below:
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ItzLevvie/dind?machine=standardLinux32gb)
-
-> [!NOTE]
-> See [Commands](#commands) for a full list of available commands.
-
----
-
-### Using the CLI version of GitHub (alternative)
-
-1) Install [GitHub CLI](https://github.com/cli/cli/releases/latest)
-2) Type `gh codespace create --idle-timeout 4h --retention-period 720h --repo ItzLevvie/dind --machine standardLinux32gb` in Command Prompt or PowerShell.
-3) This will allow you to create the GitHub Codespaces based on the files from this repository:
-    ```
-    C:\Users\codespaces>gh codespace create --idle-timeout 4h --retention-period 720h --repo ItzLevvie/dind --machine xLargePremiumLinux
-      ✓ Codespaces usage for this repository is paid for by microsoft
-    congenial-goldfish-5ggv6rrqpx7c7pj
-    ```
-4) Type `gh codespace view --repo ItzLevvie/dind --json billableOwner,createdAt,devcontainerPath,displayName,environmentId,idleTimeoutMinutes,lastUsedAt,location,machineDisplayName,machineName,name,owner,prebuild,repository,retentionExpiresAt,retentionPeriodDays,state` in Command Prompt or PowerShell.
-5) This will allow you to see the status of your GitHub Codespaces:
-    ```
-    C:\Users\codespaces>gh codespace view --repo ItzLevvie/dind --json billableOwner,createdAt,devcontainerPath,displayName,environmentId,idleTimeoutMinutes,lastUsedAt,location,machineDisplayName,machineName,name,owner,prebuild,repository,retentionExpiresAt,retentionPeriodDays,state
-    ? Choose codespace: ItzLevvie/dind [main]: congenial goldfish
-    {
-      "billableOwner": {
-        "login": "microsoft",
-        "type": "Organization"
-      },
-      "createdAt": "2025-03-25T18:29:21+00:00",
-      "devcontainerPath": ".devcontainer/devcontainer.json",
-      "displayName": "congenial goldfish",
-      "environmentId": "b1f7729a-c417-47cd-a4ce-811cf3952b8c",
-      "idleTimeoutMinutes": 240,
-      "lastUsedAt": "2025-03-25T18:29:21+00:00",
-      "location": "UkSouth",
-      "machineDisplayName": "32 cores, 128 GB RAM, 128 GB storage",
-      "machineName": "xLargePremiumLinux",
-      "name": "congenial-goldfish-5ggv6rrqpx7c7pj",
-      "owner": "ItzLevvie",
-      "prebuild": false,
-      "repository": "ItzLevvie/dind",
-      "retentionExpiresAt": "",
-      "retentionPeriodDays": 30,
-      "state": "Available"
-    }
-    ```
-6) When it says `"state": "Available"` — you can access your GitHub Codespaces at [GitHub Codespaces — Dashboard](https://github.com/codespaces):
-    ![Image](https://github.com/user-attachments/assets/eab700ae-18d1-4d3b-9c74-932b5bf8ab79)
-
-> [!NOTE]
-> See [Commands](#commands) for a full list of available commands.
-
----
-
-### Commands
-
-This repository contains a few helper scripts[^3] to get you started.
-
-[^3]: These helper scripts are located [here](https://github.com/ItzLevvie/dind/tree/main/.devcontainer/helpers).
-
-| Command | Description |
-| :-: | :-: |
-| start | Starts Windows 11 |
-| stop | Stops Windows 11 |
-| restart | Restarts Windows 11 |
-| kill | Forcefully stops Windows 11 |
-| reset | Resets Windows 11 to a clean state <br><br> Note: This will only work if the `/tmp/github/windows/data.img` file exists |
-| remove | Removes the `windows` container |
-| rebuild | Performs a full rebuild of your GitHub Codespaces |
-
-## Frequently Asked Questions (FAQ)
+# Directions:
+Click on the button below, and set the codespace at the MAX Machine type. When you click the link, you will see something like:
+<img width="1359" height="601" alt="Screenshot 2025-10-01 7 29 28 PM" src="https://github.com/user-attachments/assets/09197b0c-d85f-4cfa-b404-59b4fc270fcc" />
+Now, At the bottom, Where it says "Machine type" Change "2-core" to "16-core". After you changed the Machine type, it should look something like this now:
+<img width="1359" height="601" alt="Screenshot 2025-10-01 7 28 15 PM" src="https://github.com/user-attachments/assets/d3197482-7af8-4e53-8324-360b7f619445" />
+Now you are ready! Click the green button named "Create Codespace". It will open up a codespace url and you will see a "Setting up Codespace" Sign. When it loads, you should see something like: <img width="1365" height="736" alt="Screenshot 2025-10-01 7 34 28 PM" src="https://github.com/user-attachments/assets/f6dfb2f1-0a75-4882-83a3-21175bfdf08a" /> Wait for the "Setting up remote connection: Building codespace..." window to close. Wait Until the terminal loads; (It should look like this: <img width="1365" height="736" alt="Screenshot 2025-10-01 7 39 45 PM" src="https://github.com/user-attachments/assets/3d428a4f-ad63-4d21-a4c5-1ce7c19bd737" /> )[Remember, This is an EXAMPLE.] Then Click the "+" sign on the terminal, located at <img width="1365" height="736" alt="Screenshot 2025-10-01 7 42 05 PM" src="https://github.com/user-attachments/assets/f0ffe8a9-7f99-4b67-9bc7-aeba8a5a3bd4" /> Once you did that, it should now look like this <img width="1365" height="739" alt="Screenshot 2025-10-01 7 42 46 PM" src="https://github.com/user-attachments/assets/1af2b612-a34a-4133-8ce0-c953e69a07ca" /> From there, type in the command: bash ``` start``` . It should start making Windows, Spewing out a buncha code. After evrything is settled, it looks like <img width="1365" height="739" alt="Screenshot 2025-10-01 7 44 50 PM" src="https://github.com/user-attachments/assets/8dd861f6-c763-45c3-a2c2-9074c9302c49" /> Then Click on the "Ports" Tab: <img width="1365" height="739" alt="Screenshot 2025-10-01 7 45 39 PM" src="https://github.com/user-attachments/assets/92e6b041-61b5-4ed4-b52f-5355c0c40886" /> It should look like: <img width="1365" height="739" alt="Screenshot 2025-10-01 7 46 26 PM" src="https://github.com/user-attachments/assets/4fa6c0ee-b4aa-4ca2-b370-78fe158dfb9a" /> Now at the 4th port, which starts with the name "QEMU (HTTP/HTTP..." Hover above the "Running process" area of the port and RIGHT CLICK. It should look like: <img width="1365" height="739" alt="image" src="https://github.com/user-attachments/assets/75f097e0-bd29-495d-8ddb-a3788f46ca72" /> Then move your mouse to Hover above the "Port Visibility" Section, which looks like: <img width="1365" height="739" alt="Screenshot 2025-10-01 7 49 11 PM" src="https://github.com/user-attachments/assets/5ab4d94a-5729-4838-be68-8bfd759af728" /> And Select "Public". It should re-add it and it should look like this now: <img width="1365" height="739" alt="Screenshot 2025-10-01 7 49 59 PM" src="https://github.com/user-attachments/assets/9d49b7b1-d11d-4b23-8a44-07a5e581c5ee" /> And Finally, Click the "🌐" Icon on the port: <img width="1365" height="739" alt="Screenshot 2025-10-01 7 50 58 PM" src="https://github.com/user-attachments/assets/97bf4bdf-598e-4692-a9ee-d6f525577e4b" /> And Boom There We go, You now have a Windows 11 OS. Wait For Everything to Install, and when you are at the <img width="1365" height="742" alt="Screenshot 2025-10-01 7 52 19 PM" src="https://github.com/user-attachments/assets/1c26e353-81d2-4783-9eed-198a57b53f4e" /> Move On To the Next topic.
 
-### Why did you create this repository?
+# INSTALLING
+From <img width="1365" height="742" alt="Screenshot 2025-10-01 7 52 19 PM" src="https://github.com/user-attachments/assets/0e6d37ce-3664-49b3-9917-a9d7e854275a" /> Select "Yes" For United States.
 
-This repository was inspired by many different YouTube videos:
-1) [Codespaces Windows 11 tutorial and playing](https://www.youtube.com/watch?v=ZxDTzAqBB1c) by [HyperNexus](https://www.youtube.com/@hyrnexs)
-2) [Installing Windows 11 on GitHub Codespaces](https://www.youtube.com/watch?v=PQv-1-qI9zg) by [LagLife](https://www.youtube.com/@laglife)
-3) [Installing Windows 10 on GitHub Codespaces!](https://www.youtube.com/watch?v=ffdYdsejzrY) by [Nashville](https://www.youtube.com/@MSNashville7)
-4) [[PATCHED] How to Create Windows QEMU VM from Codespaces - Free Windows VPS from Codespace](https://www.youtube.com/watch?v=-kzua2uEMC8) by [Paddi's Tech Stuff](https://www.youtube.com/@PaddisTechStuff)
-5) [How to Run Windows 10 Cloud PC on your Device using Github Codespace [New Method] [2025].](https://www.youtube.com/watch?v=Sg8m_hyNioI) by [JoyZoneTech](https://www.youtube.com/@JoyZoneTech)
-6) [How to Create a Free Windows 10 RDP on GitHub](https://www.youtube.com/watch?v=Pc9FgSvnI90) by [TechXploitz](https://www.youtube.com/@techxploitz)
-7) [Windows in a Github Codespace Dev Container](https://www.youtube.com/watch?v=o0c9DexUVpI) by [HashiQube DevOps Lab](https://www.youtube.com/@hashiqube)
-8) [Get FREE Windows RDP ✅ | New Github Method](https://www.youtube.com/watch?v=HykF03LxtwA) by [Earnastic](https://www.youtube.com/@earnastic)
+From <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/24315350-7c23-4488-b918-e98421dd80c9" /> And Select "Yes" To "US"
+From <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/0b3393a6-8577-4607-9f16-e3bd2a5d20f0" /> Select "Skip"
+Now you should be in <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/7f7174af-c08c-4255-af2b-213a309eecb0" /> And Just wait for it to Finish. 
+Once it finishes, You should be at <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/7f20a9bb-5cc7-44e8-aa28-445d129723d4" /> Now it gets complicated so Pay Attention.
+Click the "Sign in Options" located at <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/7a79f7b1-20a6-487d-b548-47d64d928ae0" />
+Then Select "Domain Join Instead" At <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/91b700d6-7753-4a0b-86c7-969299bc932a" />
+Now you should be at <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/12468a69-c56d-4747-add8-0e1e69c701ed" />
+In the "Enter your Name" Section, Type your Name, Liks this (for example: <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/9f5754d4-7195-40c2-8fe3-ac07b37d9aa9" /> And select "Next")
+Now Create A password. This will be used for sign in on the lock-screen; etc. <img width="1365" height="738" alt="image" src="https://github.com/user-attachments/assets/f786234a-4fee-4a97-8ba1-fc3c66b84951" />
 
-This repository was also inspired by many different websites:
-1) [Run Windows 10 for free in GitHub codespaces using QEMU](https://www.aih.app/2023/02/04/run-windows-10-for-free-in-github-codespaces-using-qemu/) by [Shreejal Maharjan](https://github.com/shreejalmaharjan-27)
 
----
 
-### What machine types are available for GitHub Codespaces?
 
-GitHub Codespaces has many different machine types which you can choose based on your needs.
 
-It uses the [AMD EPYC™ 7763](https://www.amd.com/en/products/processors/server/epyc/7003-series/amd-epyc-7763.html) (Milan) CPU which delivers the best performance as seen in [Performance Benchmarks of Cloud Machines (December 2023)](https://bas.codes/posts/cloudbench2312).
 
-Previously, GitHub Codespaces used [Intel® Xeon® Platinum 8370C](https://azure.microsoft.com/en-us/blog/upgrade-your-infrastructure-with-the-latest-dv5ev5-azure-vms-in-preview/) (Ice Lake), [Intel® Xeon® Platinum 8272CL](https://azure.microsoft.com/en-us/blog/new-general-purpose-and-memoryoptimized-azure-virtual-machines-with-intel-now-available/) (Cascade Lake), and [Intel® Xeon® Platinum 8168](https://azure.microsoft.com/en-us/blog/fv2-vms-are-now-available-the-fastest-vms-on-azure/) (Skylake) CPUs.
 
-Below are the different machine types available for your GitHub Codespaces:
 
-| Machine Type | Core | RAM | Storage <br> (`/workspaces`) | Storage <br> (`/tmp`) | Price |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| basicLinux32gb | 2 cores <br> (1 core / 2 threads) | 8 GB | 32 GB | 44 GB | $0.18 per hour |
-| standardLinux32gb | 4 cores <br> (2 cores / 4 threads) | 16 GB | 32 GB | 118 GB | $0.36 per hour |
-| premiumLinux[^1] | 8 cores <br> (4 cores / 8 threads) | 32 GB | 64 GB | 265 GB | $0.72 per hour |
-| largePremiumLinux[^1] | 16 cores <br> (8 cores / 16 threads) | 64 GB | 128 GB | 560 GB | $1.44 per hour |
-| xLargePremiumLinux[^1][^2] | 32 cores <br> (16 cores / 32 threads) | 128 GB | 128 GB | 1.2 TB | $2.88 per hour |
 
-[^1]: Contact [GitHub Support](https://support.github.com/) to access these machine types.
-[^2]: This machine type is not available as of February 2025.
 
----
 
-### How many usage hours can I use GitHub Codespaces for free each month?
 
-GitHub Codespaces has different usage hours based on which plan your GitHub account uses.
 
-Below are the different usage hours for your GitHub Codespaces:
 
-| Machine Type | GitHub Free <br> (120 core hours per month) | GitHub Pro <br> (180 core hours per month) | Microsoft employees and partners <br> (unlimited core hours per month) |
-| :-: | :-: | :-: | :-: |
-| basicLinux32gb | 60 usage hours | 90 usage hours | unlimited usage hours |
-| standardLinux32gb | 30 usage hours | 45 usage hours | unlimited usage hours |
-| premiumLinux[^1] | 15 usage hours | 22.5 usage hours | unlimited usage hours |
-| largePremiumLinux[^1] | 7.5 usage hours | 11.25 usage hours | unlimited usage hours |
-| xLargePremiumLinux[^1][^2] | 3.75 usage hours | 5.625 usage hours | unlimited usage hours |
 
-> [!NOTE]
-> If you are on GitHub Free, you can use GitHub Codespaces for free (up to 60 usage hours per month). <br><br>
-> After this, you will need to provide your payment details to continue using GitHub Codespaces.
 
-> [!TIP]
-> GitHub has a formula to calculate your core hours. <br>
-> It is the **number of cores** multiplied by **how many hours you used a particular machine type**. <br><br>
-> For example:
-> - If you wanted to use `premiumLinux` (8 cores) for 2 hours then you calculate 8 * 2 = 16 core hours <br>
-> - If you wanted to use `premiumLinux` (8 cores) for 8 hours then you calculate 8 * 8 = 64 core hours
 
----
 
-### What regions are available for my GitHub Codespaces?
 
-Your GitHub Codespaces is deployed to one of several Microsoft Azure regions based on the location of your IP address.
 
-Below are the different Microsoft Azure regions available for your GitHub Codespaces:
+have to wait 5~10 minutes for Windows to install.
+Once
 
-| Geography | Region | Location |
-| :-: | :-: | :-: |
-| Asia Pacific | Southeast Asia | Singapore |
-| Australia | Australia Central | Canberra |
-| Australia | Australia East | New South Wales |
-| Europe | West Europe | Netherlands |
-| India | Central India | Pune |
-| United Kingdom | UK South | London |
-| United States | East US | Virginia |
-| United States | East US 2 | Virginia |
-| United States | West US 2 | Washington |
-| United States | West US 3 | Arizona |
+Example is listed below.:
 
----
+<img width="1359" height="601" alt="Screenshot 2025-10-01 7 27 29 PM" src="https://github.com/user-attachments/assets/b7262941-8953-470e-ba45-1cf073654701" />
 
-### How can I change the inactivity timeout for my GitHub Codespaces?
+[![Start a Windows 11 Container - CLICK HERE.](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?repo=Gamer-friend/windows-11-new&machine=standardLinux32gb)
 
-By default, your GitHub Codespaces has an inactivity timeout of 30 minutes.
-
-However, you can extend this inactivity timeout to a maximum of 240 minutes (4 hours) at [GitHub Codespaces — Settings](https://github.com/settings/codespaces) under `Default idle timeout`
-
----
-
-### Why did you choose Tailscale over Ngrok for Remote Desktop Protocol (RDP)?
-
-Tailscale has the lowest latency because all connections are peer-to-peer (P2P).
-
-Tailscale has [more features](https://tailscale.com/compare) than its competitors.
-
-Ngrok uses a tunnel server which increases the latency for your Remote Desktop Protocol (RDP) connections.
-
-Ngrok requires your payment details to allow TCP connections which is required for Remote Desktop Protocol (RDP) to properly work.
-
----
-
-### What are the steps to create my own system images?
-
-#### Requirements
-
-- Hyper-V with Secure Boot, Trusted Platform Module (TPM), and Network Adapter (Ethernet) disabled.
-- `Windows11_InsiderPreview_EnterpriseVL_x64_en-us_27924.iso` from [Windows Insider Preview — ISOs](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewiso) is mounted as a DVD Drive on Hyper-V.
-- `virtio-win-1.9.47.iso` from [Red Hat Enterprise Linux 10 — AppStream](https://github.com/ItzLevvie/artifacts/releases/latest/download/virtio-win.iso) is mounted as a DVD Drive on Hyper-V.
-
----
-
-#### Guide
-
-1\) In the Windows 11 Setup where it says `Select language settings`:
-- press <kbd>Shift</kbd> + <kbd>F10</kbd>
-- type `regedit` and press <kbd>Enter</kbd>
-
-Create three registry entries at `HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig`:
-- `BypassSecureBootCheck` with a value of `1`
-- `BypassTPMCheck` with a value of `1`
-- `BypassRAMCheck` with a value of `1`
-
-> [!IMPORTANT]
-> These registry entries are read by Windows 11 Setup from `Windows11_InsiderPreview_EnterpriseVL_x64_en-us_27924.iso\sources\winsetup.dll` which allows you to bypass the system requirements for Windows 11.
-
----
-
-2\) In the Windows 11 Setup where it says `Select location to install Windows 11`:
-- click `Load Driver`
-- uncheck `Hide drivers that aren't compatible with this computer's hardware`
-- click `Browse`
-- select `CD Drive (E:) virtio-win-1.9.47`
-- install `vioscsi` from `E:\vioscsi\w11\amd64\vioscsi.inf`
-
-> [!IMPORTANT]
-> This installs the required SCSI drivers to allow Windows 11 to boot on QEMU.
-
----
-
-3\) In the Windows 11 OOBE where it says `Is this the right country or region?`:
-- press <kbd>Shift</kbd> + <kbd>F10</kbd>
-- type `cd /d E:` and press <kbd>Enter</kbd>
-- type `virtio-win-gt-x64.msi` and press <kbd>Enter</kbd>
-- type `shutdown /r /t 0` and press <kbd>Enter</kbd>
-
-> [!IMPORTANT]
-> This installs all of the required paravirtualized drivers for Windows 11 to work properly on QEMU.
-
----
-
-4\) In the Windows 11 OOBE where it says `Is this the right country or region?`:
-- press <kbd>Shift</kbd> + <kbd>F10</kbd>
-- type `regedit` and press <kbd>Enter</kbd>
-
-Create one registry entry at `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm`:
-- `ForceEffectMode` with a value of `2`
-
-> [!TIP]
-> This allows Windows 11 to force Mica and rounded corners. <br>
-> This registry entry is read by Windows 11 from `C:\Windows\System32\dwmcore.dll`
-
----
-
-5\) In the Windows 11 OOBE where it says `Is this the right country or region?`:
-- press <kbd>Shift</kbd> + <kbd>F10</kbd>
-- type `netsh advfirewall set allprofiles state off` and press <kbd>Enter</kbd>
-- type `regedit` and press <kbd>Enter</kbd>
-
-Create one registry entry at `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services`:
-- `fDenyTSConnections` with a value of `0`
-
-> [!TIP]
-> This enables Remote Desktop Protocol (RDP).
-
-Create one registry entry at `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa`:
-- `LimitBlankPasswordUse` with a value of `0`
-
-> [!TIP]
-> This allows you to Remote Desktop Protocol (RDP) into Windows 11 with blank passwords.
-
----
-
-6\) In the Windows 11 OOBE where it says `Is this the right country or region?`:
-- press <kbd>Shift</kbd> + <kbd>F10</kbd>
-- type `powercfg /list` and press <kbd>Enter</kbd>
-- type `powercfg /setactive e9a42b02-d5df-448d-aa00-03f14749eb61` and press <kbd>Enter</kbd>
-- type `powercfg /getactivescheme` and press <kbd>Enter</kbd>
-- type `powercfg /change monitor-timeout-ac 0` and press <kbd>Enter</kbd>
-
-> [!TIP]
-> This sets the power plan to Ultimate Performance.
-
----
-
-7\) In the Windows 11 OOBE where it says `Is this the right country or region?`:
-- press <kbd>Shift</kbd> + <kbd>F10</kbd>
-- type `regedit` and press <kbd>Enter</kbd>
-
-Create one registry entry at `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\LanmanWorkstation`:
-- `AllowInsecureGuestAuth` with a value of `1`
-
-Create one registry entry at `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters`:
-- `RequireSecuritySignature` with a value of `0`
-
-> [!TIP]
-> This allows you to access SMB shares.
-
----
-
-8\) In the Windows 11 OOBE where it says `Is this the right country or region?`:
-- press <kbd>Shift</kbd> + <kbd>F10</kbd>
-- type `regedit` and press <kbd>Enter</kbd>
-
-Create one registry entry at `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE`:
-- `BypassNRO` with a value of `1`
-
-> [!TIP]
-> This allows you to create a local account on Windows 11.
-
----
-
-9\) In the Windows 11 OOBE where it says `Is this the right country or region?`:
-- press <kbd>Shift</kbd> + <kbd>F10</kbd>
-- type `cscript //nologo slmgr.vbs /skms azkms.core.windows.net` and press <kbd>Enter</kbd>
-- type `shutdown /s /t 0` and press <kbd>Enter</kbd>
-
-> [!TIP]
-> This allows you to activate Windows 11 Enterprise for free.
-
----
-
-10\) Hyper-V will store your VHDX file at `C:\ProgramData\Microsoft\Windows\Virtual Hard Disks\data.vhdx`
-
-You will have to send your VHDX file to your GitHub Codespaces using [GitHub CLI](https://github.com/cli/cli/releases/latest): `gh codespace cp --expand "C:\ProgramData\Microsoft\Windows\Virtual Hard Disks\data.vhdx" remote:/workspaces/github`
-
----
-
-11\) Your VHDX file will have to be converted to an IMG file for QEMU.
-
-`qemu-img convert -p -O raw -o preallocation=off data.vhdx windows/data.img`
-- `-p` forces QEMU to display the progress bar.
-- `-O raw` forces QEMU to convert to an IMG file.
-
----
-
-12\) You can upload your VHDX file to GitHub Releases.
-
-`7z a -mmt$(nproc --all) -mx9 -v1g data.7z data.vhdx`
-- `-mmt$(nproc --all)` forces 7-Zip to use all cores.
-- `-mx9` forces 7-Zip to use ultra compression.
-- `-v1g` forces 7-Zip to split the `data.7z` file into 1 GB chunks.
+Steps:
