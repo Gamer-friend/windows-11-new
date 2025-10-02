@@ -25,8 +25,8 @@ From <img width="1365" height="742" alt="image" src="https://github.com/user-att
 From <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/0b3393a6-8577-4607-9f16-e3bd2a5d20f0" /> Select "Skip"
 Now you should be in <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/7f7174af-c08c-4255-af2b-213a309eecb0" /> And Just wait for it to Finish. 
 Once it finishes, You should be at <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/7f20a9bb-5cc7-44e8-aa28-445d129723d4" /> Now it gets complicated so Pay Attention.
-Click the "Sign in Options" located at <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/7a79f7b1-20a6-487d-b548-47d64d928ae0" />
-Then Select "Domain Join Instead" At <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/91b700d6-7753-4a0b-86c7-969299bc932a" />
+Click the "Sign in Options" located at <img width="1365" height="742" alt="Screenshot 2025-10-01 7 56 29 PM" src="https://github.com/user-attachments/assets/46aaa179-5fb3-45e5-806c-a74040ce3b6c" />
+Then Select "Domain Join Instead" At <img width="1365" height="742" alt="Screenshot 2025-10-01 7 57 06 PM" src="https://github.com/user-attachments/assets/44cc162c-f1d6-4d82-a647-28f63a61908c" />
 Now you should be at <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/12468a69-c56d-4747-add8-0e1e69c701ed" />
 In the "Enter your Name" Section, Type your Name, Liks this (for example: <img width="1365" height="742" alt="image" src="https://github.com/user-attachments/assets/9f5754d4-7195-40c2-8fe3-ac07b37d9aa9" /> And select "Next")
 Now Create A password. This will be used for sign in on the lock-screen; etc. <img width="1365" height="738" alt="image" src="https://github.com/user-attachments/assets/f786234a-4fee-4a97-8ba1-fc3c66b84951" />
